@@ -11,7 +11,8 @@ describe('Koa request body validation', () => {
             .send({ baz: 'foobar' })
             .send({ barbaz: 'foobar' })
             .send({ bazbaz: 'barbaz' })
-            .send({ age: 25 })
+            .send({ age: 25.5 })
+            // .send({ wife: 'Marie' })
             .end((err, res) => {
                 const errorFields = {};
 
@@ -26,8 +27,8 @@ describe('Koa request body validation', () => {
 
                 errorFields.should.have.properties({
                     foo: 'requiredWith',
-                    girlfiend: 'requiredIf',
-                    wife: 'requiredNotIf',
+                    // girlfiend: 'requiredIf',
+                    // wife: 'requiredNotIf',
                     foobar: 'requiredWithAll',
                     gandalf: 'requiredWithout',
                     name: 'required',
@@ -173,7 +174,6 @@ describe('Koa request body validation', () => {
             .end((err, res) => {
                 res.statusCode.should.equal(200);
                 res.body.should.be.an.Object;
-
                 done();
             });
     });
