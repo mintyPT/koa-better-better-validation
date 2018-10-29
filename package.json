@@ -1,6 +1,6 @@
 {
   "name": "koa-better-better-validation",
-  "version": "1.3.5",
+  "version": "1.3.6",
   "description": "Koa Better Better Validation is a more up-to-date 'fork' Koa Better Validation which is a more up-to-date 'fork' of koa-validation. You can validate request params, querystring values, bodies, and even files.",
   "main": "lib/Validate.js",
   "scripts": {
